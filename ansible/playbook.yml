@@ -1,0 +1,8 @@
+---
+- name: Setup E-Commerce Application
+  hosts: local
+  become: yes
+
+  roles:
+    - setup
+    - deploy

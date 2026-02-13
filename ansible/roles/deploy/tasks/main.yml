@@ -1,0 +1,10 @@
+---
+- name: Build docker image from local project
+  command: docker build -t kidsbeds-app /home/kaleem/web-test
+
+- name: Stop old container if exists
+  command: docker rm -f kidsbeds
+  ignore_errors: yes
+
+- name: Run Docker container
+  command: docker run -d -p 8081:80 --name kidsbeds kidsbeds-app
